@@ -17,9 +17,12 @@ namespace BancoImobiliario.Dominio
                 throw new ArgumentOutOfRangeException(nameof(quantidadeJogadores), $"O campo {nameof(quantidadeJogadores)} deve estar entre 2 e 6.");
             }
 
+            Banco = new Banco();
+
             for (int i = 1; i <= quantidadeJogadores; i++)
             {
                 Jogadores.Add(new Jogador(i));
+                Banco.Saldo -= Jogador.SaldoInicial;
             }
         }
 

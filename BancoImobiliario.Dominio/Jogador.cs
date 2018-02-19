@@ -7,7 +7,8 @@
             Cor = (Cor)numeroCor;
         }
 
+        public static int SaldoInicial { get; internal set; } = 1500;
         public Cor Cor { get; set; }
-        public int Saldo { get; set; } = 1500;
+        public int Saldo { get; set; } = SaldoInicial;
     }
 }
