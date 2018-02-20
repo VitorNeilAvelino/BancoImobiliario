@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace BancoImobiliario.Dominio.Tests
 {
@@ -16,6 +17,13 @@ namespace BancoImobiliario.Dominio.Tests
             Assert.IsTrue(mesa.Jogadores[0].Cor == Cor.Preto);
             Assert.IsTrue(mesa.Jogadores[0].Saldo == Jogador.SaldoInicial);
             Assert.IsTrue(mesa.Banco.Saldo == Banco.SaldoInicial - (Jogador.SaldoInicial * 4));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void QuantidadeIncorretaDeJogadoresTeste()
+        {
+            var mesa = new Mesa(7);
         }
     }
 }
